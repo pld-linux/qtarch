@@ -1,0 +1,24 @@
+--- qtarch-2.2/Makefile.common.orig	Tue Mar 20 20:58:29 2001
++++ qtarch-2.2/Makefile.common	Wed Jan  9 13:56:18 2002
+@@ -19,17 +19,17 @@
+ 
+ ifdef BUILD_RELEASE
+ CFLAGS	= -DQTARCH_VERSION=\"$(VERSION)-$(RELEASE)\" \
+-	-O2 -fno-strength-reduce -W -Wall -pipe -rdynamic
++	$(OPT) -fno-strength-reduce -W -Wall -pipe -rdynamic
+ else
+ CFLAGS	= -DQTARCH_VERSION=\"$(VERSION)-$(RELEASE)\" \
+-	-g -Wall -W -pipe -rdynamic #-DQT_NO_COMPAT
++	$(OPT) -Wall -W -pipe -rdynamic #-DQT_NO_COMPAT
+ endif
+ 
+ # Flags used by the C Compiler (not the c++ compiler)
+ ifdef BUILD_RELEASE
+-C_FLAGS = -O2 -Ixmltok -Ixmlparse -DXML_NS
++C_FLAGS = $(OPT) -Ixmltok -Ixmlparse -DXML_NS
+ else
+-C_FLAGS = -g -Wall -W -pipe -Ixmltok -Ixmlparse -DXML_NS
++C_FLAGS = $(OPT) -Wall -W -pipe -Ixmltok -Ixmlparse -DXML_NS
+ endif
+ 
+ LFLAGS  = -g -L$(QTDIR)/lib \
