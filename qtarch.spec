@@ -15,11 +15,11 @@ Qt Architect
 %setup -q -n %{name}-1.4
 
 %build
-make BUILD_RELEASE=1 MAKE="make" CFLAGS="$RPM_OPT_FLAGS -W -Wall -pipe" \
+%{__make} BUILD_RELEASE=1 MAKE="make" CFLAGS="$RPM_OPT_FLAGS -W -Wall -pipe" \
 	INCDIR="-I/usr/X11R6/include/X11/qt -I`pwd`" QTDIR=/usr/X11R6
 
 cd module/kde
-make BUILD_RELEASE=1 MAKE="make" CFLAGS="$RPM_OPT_FLAGS -W -Wall -pipe" \
+%{__make} BUILD_RELEASE=1 MAKE="make" CFLAGS="$RPM_OPT_FLAGS -W -Wall -pipe" \
 	INCDIR="-I/usr/X11R6/include/X11/qt -I`pwd`" QTDIR=/usr/X11R6
 
 %install
