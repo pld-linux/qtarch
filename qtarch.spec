@@ -10,8 +10,9 @@ Group(de):	X11/Entwicklung/Werkzeuge
 Group(fr):	X11/Development/Outils
 Group(pl):	X11/Programowanie/Narzêdzia
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/qtarch/%{name}-%{version}-%{vrel}.tar.gz
-Patch:		%{name}-opt.patch
+Patch0:		%{name}-opt.patch
 URL:		http://qtarch.sourceforge.net/
+BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
