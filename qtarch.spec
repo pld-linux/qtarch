@@ -1,5 +1,5 @@
 Summary:	Qt Architect
-Summary(pl):	Architekt Qt
+Summary(pl):	Architekt Qt - graficzny edytor kontrolek QT
 Name:		qtarch
 Version:	2.2
 %define	vrel	1
@@ -10,6 +10,8 @@ Group(de):	X11/Entwicklung/Werkzeuge
 Group(fr):	X11/Development/Outils
 Group(pl):	X11/Programowanie/Narzêdzia
 Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/qtarch/%{name}-%{version}-%{vrel}.tar.gz
+Source1:	%{name}.desktop
+Source2:	%{name}.png
 Patch0:		%{name}-opt.patch
 URL:		http://qtarch.sourceforge.net/
 BuildRequires:	qt-devel
@@ -29,19 +31,21 @@ Architekt Qt - projektant ekranu dla zestawu widgetów Qt.
 %patch -p1
 
 %build
-%{__make} BUILD_RELEASE=1 MAKE="make" OPT="%{rpmcflags}" \
-	INCDIR="-I%{_includedir}/qt -I`pwd` -I. -Iexpat/xmltok" QTDIR=%{_prefix}
-
-#cd module/kde
-#%{__make} BUILD_RELEASE=1 MAKE="make" OPT="%{rpmcflags}" \
-#	INCDIR="-I%{_includedir}/qt -I`pwd` -I. -Iexpat/xmltok" QTDIR=%{_prefix}
+%{__make} BUILD_RELEASE=1 \
+	MAKE="make" OPT="%{rpmcflags} -fno-rtti" \
+	INCDIR="-I%{_includedir}/qt -I`pwd` -I. -Iexpat/xmltok" \
+	QTDIR=%{_prefix}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}}
+	$RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Development}
 
 install qtarch $RPM_BUILD_ROOT%{_bindir}
 #install module/kde/KDEModule.so $RPM_BUILD_ROOT%{_libdir}
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development
+install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 gzip -9nf TODO README doc/QtArch.ps
 
@@ -50,7 +54,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/qtarch
-#%attr(755,root,root) %{_libdir}/KDEModule.so
 %doc *.gz doc/*.gz misc/{DlgEdit.Template.Makefile,dlgUpdate.pl}
 %doc help/*.html module/module-howto.html
+%attr(755,root,root) %{_bindir}/qtarch
+#%attr(755,root,root) %{_libdir}/KDEModule.so
+%{_applnkdir}/Development/*
+%{_pixmapsdir}/*
