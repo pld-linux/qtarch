@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		X11/Development/Tools
 Source0:	http://dl.sourceforge.net/qtarch/%{name}-%{version}-%{vrel}.tar.gz
+# Source0-md5:	545f8b11252deb9c0b936f892c6dc271
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-opt.patch
