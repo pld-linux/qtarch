@@ -44,14 +44,12 @@ install qtarch $RPM_BUILD_ROOT%{_bindir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Development
 install %{SOURCE2} $RPM_BUILD_ROOT%{_pixmapsdir}
 
-gzip -9nf TODO README doc/QtArch.ps
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz doc/*.gz misc/{DlgEdit.Template.Makefile,dlgUpdate.pl}
+%doc TODO README doc/QtArch.ps misc/{DlgEdit.Template.Makefile,dlgUpdate.pl}
 %doc help/*.html module/module-howto.html
 %attr(755,root,root) %{_bindir}/qtarch
 #%attr(755,root,root) %{_libdir}/KDEModule.so
