@@ -38,7 +38,7 @@ Architekt Qt - projektant ekranu dla zestawu widgetów Qt.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}} \
 	$RPM_BUILD_ROOT{%{_pixmapsdir},%{_applnkdir}/Development}
 
 install qtarch $RPM_BUILD_ROOT%{_bindir}
