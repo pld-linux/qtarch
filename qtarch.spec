@@ -28,13 +28,13 @@ rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/usr/bin
 install -m 755 -s qtarch $RPM_BUILD_ROOT/usr/bin
 
-mkdir -p $RPM_BUILD_ROOT/usr/lib
-install -m 755 -s module/kde/KDEModule.so $RPM_BUILD_ROOT/usr/lib
+mkdir -p $RPM_BUILD_ROOT%{_libdir}
+install -m 755 -s module/kde/KDEModule.so $RPM_BUILD_ROOT%{_libdir}
 
 %files
 %defattr(644 root root 755)
 %attr (755,root,root) /usr/bin/qtarch
-%attr (755,root,root) /usr/lib/KDEModule.so
+%attr (755,root,root) %{_libdir}/KDEModule.so
 %doc COPYING
 %doc TODO
 %doc README
