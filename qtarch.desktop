@@ -1,0 +1,8 @@
+Name=Qtarch
+Comment=a graphical dialog editor for the Qt widget set
+Comment[de]=ein grafisches Dialog-Editor für Qt Widget
+Comment[pl]=Architekt Qt - graficzny edytor kontrolek QT
+Icon=qtarch.png
+Exec=qtarch
+Terminal=0
+Type=Application
