@@ -6,14 +6,13 @@ Version:	2.2
 Release:	1
 License:	GPL
 Group:		X11/Development/Tools
-Source0:	ftp://ftp.sourceforge.net/pub/sourceforge/qtarch/%{name}-%{version}-%{vrel}.tar.gz
+Source0:	http://dl.sourceforge.net/qtarch/%{name}-%{version}-%{vrel}.tar.gz
 Source1:	%{name}.desktop
 Source2:	%{name}.png
 Patch0:		%{name}-opt.patch
 URL:		http://qtarch.sourceforge.net/
 BuildRequires:	qt-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Qt Architect - screen architect for the Qt widget set.
