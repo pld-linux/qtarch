@@ -46,9 +46,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/qtarch
 %attr(755,root,root) %{_libdir}/KDEModule.so
-%doc TODO.gz README.gz doc/QtArch.ps.gz
-%doc misc/DlgEdit.Template.Makefile
-%doc misc/dlgUpdate.pl
-%doc help/*.html
-%doc module/module-howto.html
-%doc module/kde/README.KDEModule
+%doc *.gz doc/*.gz misc/{DlgEdit.Template.Makefile,dlgUpdate.pl}
+%doc help/*.html module/{module-howto.html,kde/README.KDEModule}
