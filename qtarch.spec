@@ -1,5 +1,5 @@
 Summary:	Qt Architect
-Summary(pl):	Architekt Qt - graficzny edytor kontrolek QT
+Summary(pl):	Architekt Qt - graficzny edytor kontrolek Qt
 Name:		qtarch
 Version:	2.2
 %define	vrel	1
