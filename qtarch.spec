@@ -6,7 +6,7 @@ Source:		http://www.primenet.com/~jtharris/qtarch/%{name}-%{version}.tar.gz
 Copyright:	GPL
 Group:		Development/Tools
 URL:		http://www.primenet.com/~jtharris/qtarch/
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Qt Architect
