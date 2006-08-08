@@ -23,7 +23,7 @@ Architekt Qt - projektant ekranu dla zestawu widgetów Qt.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %build
 %{__make} BUILD_RELEASE=1 \
