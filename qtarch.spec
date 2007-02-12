@@ -1,5 +1,5 @@
 Summary:	Qt Architect
-Summary(pl):	Architekt Qt - graficzny edytor kontrolek Qt
+Summary(pl.UTF-8):   Architekt Qt - graficzny edytor kontrolek Qt
 Name:		qtarch
 Version:	2.2
 %define	vrel	1
@@ -18,8 +18,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Qt Architect - screen architect for the Qt widget set.
 
-%description -l pl
-Architekt Qt - projektant ekranu dla zestawu widgetów Qt.
+%description -l pl.UTF-8
+Architekt Qt - projektant ekranu dla zestawu widgetÃ³w Qt.
 
 %prep
 %setup -q
